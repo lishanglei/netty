@@ -1,0 +1,44 @@
+//指定protocol buffer 版本
+syntax = "proto2";
+//定义包名
+package com.netty.protobuf;
+//加快编译速度
+option optimize_for = SPEED;
+//定义java包,会替换上边定义的package
+option java_package = "com.netty.protoDemo";
+//定义生成代码输出类的类名
+option java_outer_classname = "MyDataInfo";
+
+message MyMessage{
+
+  enum DataType{
+    PersonType = 1;
+    DogType = 2;
+    CatType = 3;
+  }
+  required DataType data_type = 1;
+
+  //如果你有多个可选的字段,但是在同一时刻只能有一个字段被设置值,后设置的字段会替换掉之前设置的值,节约内存
+  oneof dataBody{
+    Person person = 2;
+    Dog dog = 3;
+    Cat cat = 4;
+  }
+
+}
+
+
+message Person{
+  optional string name = 1;
+  optional int32 age = 2;
+  optional string address = 3;
+
+}
+message Dog{
+  optional string name = 1;
+  optional int32 age = 2;
+}
+message Cat{
+  optional string name = 1;
+  optional string city = 2;
+}
