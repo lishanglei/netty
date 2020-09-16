@@ -5,7 +5,7 @@ package com.netty.protobuf;
 //加快编译速度
 option optimize_for = SPEED;
 //定义java包,会替换上边定义的package
-option java_package = "com.netty.protoDemo";
+option java_package = "com.netty.proto.protoDemo";
 //定义生成代码输出类的类名
 option java_outer_classname = "MyDataInfo";
 

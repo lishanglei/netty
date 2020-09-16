@@ -1,6 +1,6 @@
 package com.netty.socketdemo;
 
-import com.netty.protoDemo.MyDataInfo;
+import com.netty.proto.protoDemo.MyDataInfo;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 

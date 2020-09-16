@@ -1,7 +1,7 @@
-package com.netty.thriftDemo;
+package com.netty.proto.thriftDemo;
 
-import com.netty.thrift.generated.Person;
-import com.netty.thrift.generated.PersonService;
+import com.netty.proto.generated.Person;
+import com.netty.proto.generated.PersonService;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.TFastFramedTransport;

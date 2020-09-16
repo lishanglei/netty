@@ -18,16 +18,19 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  */
 public class NettyServer {
 
+
     public static void main(String[] args)  {
 
         //事件循环组
         //boss从客户端接收连接,但是不做处理,而是交给worker进行实际业务处理
+        //一些参数的初始化赋值
         EventLoopGroup bossGroup =new NioEventLoopGroup();
         EventLoopGroup workerGroup =new NioEventLoopGroup();
 
         try {
             //服务启动器
             ServerBootstrap serverBootstrap =new ServerBootstrap();
+
 
             serverBootstrap.group(bossGroup,workerGroup)
                     .channel(NioServerSocketChannel.class)

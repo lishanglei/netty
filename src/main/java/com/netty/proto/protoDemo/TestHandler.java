@@ -1,4 +1,4 @@
-package com.netty.protoDemo;
+package com.netty.proto.protoDemo;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

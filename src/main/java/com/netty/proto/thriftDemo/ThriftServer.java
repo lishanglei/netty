@@ -1,6 +1,6 @@
-package com.netty.thriftDemo;
+package com.netty.proto.thriftDemo;
 
-import com.netty.thrift.generated.PersonService;
+import com.netty.proto.generated.PersonService;
 import org.apache.thrift.TProcessorFactory;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.server.THsHaServer;

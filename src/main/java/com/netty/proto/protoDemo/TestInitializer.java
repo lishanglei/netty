@@ -1,4 +1,4 @@
-package com.netty.protoDemo;
+package com.netty.proto.protoDemo;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

@@ -51,6 +51,7 @@ public class NioTest12 {
             int select = selector.select();
             System.out.println("numbers: " + select);
             //关注的selected key的set集合
+
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
             System.out.println("selectedKeys: " + selectionKeys);
             Iterator<SelectionKey> iterator = selectionKeys.iterator();
@@ -66,6 +67,7 @@ public class NioTest12 {
                 } else if (selectionKey.isReadable()) {
 
                     SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
+
                     int bytesRead = 0;
                     while (true) {
                         ByteBuffer buffer = ByteBuffer.allocate(512);
@@ -79,7 +81,7 @@ public class NioTest12 {
 
                         bytesRead += read;
                     }
-                    System.out.println("读取: "+bytesRead+",来自于: "+socketChannel);
+                    System.out.println("读取: " + bytesRead + ",来自于: " + socketChannel);
                     iterator.remove();
                 }
             }
@@ -87,4 +89,6 @@ public class NioTest12 {
 
 
     }
+
+
 }

@@ -1,4 +1,4 @@
-package com.netty.protobuf;
+package com.netty.proto.protobuf;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 

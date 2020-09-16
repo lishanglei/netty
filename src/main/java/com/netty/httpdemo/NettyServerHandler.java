@@ -40,6 +40,8 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<HttpObject> 
 
         if (httpObject instanceof HttpRequest) {
             HttpRequest httpRequest =(HttpRequest)httpObject;
+
+
             System.out.println("请求方法名:"+httpRequest.method().name());
 
             URI uri =new URI(httpRequest.uri());

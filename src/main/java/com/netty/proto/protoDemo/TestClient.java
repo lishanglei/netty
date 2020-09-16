@@ -1,4 +1,4 @@
-package com.netty.protoDemo;
+package com.netty.proto.protoDemo;
 
 import com.netty.socketdemo.TestClientInitializer;
 import io.netty.bootstrap.Bootstrap;
