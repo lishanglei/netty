@@ -1,8 +1,9 @@
-package com.netty.handlerdemo;
+package com.netty.handlerdemo2;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
+
 /**
  * @author lishanglei
  * @version v1.0.0
@@ -15,12 +16,11 @@ import io.netty.channel.socket.SocketChannel;
 public class MyServerInitializer extends ChannelInitializer<SocketChannel> {
 
     protected void initChannel(SocketChannel channel) throws Exception {
+
+        System.out.println(this);
         ChannelPipeline pipeline = channel.pipeline();
 
 
-        pipeline.addLast(new LongToByteEncoder());
-        pipeline.addLast(new ByteToLongDecoder2());
-        pipeline.addLast(new LongToStringDecoder());
         pipeline.addLast(new MyServerHandler());
 
 

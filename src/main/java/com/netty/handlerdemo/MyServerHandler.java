@@ -14,9 +14,9 @@ import java.util.UUID;
  * ---------------------------------------------------------------------------------*
  * 2020/9/1              lishanglei      v1.0.0           Created
  */
-public class MyServerHandler extends SimpleChannelInboundHandler<Long> {
+public class MyServerHandler extends SimpleChannelInboundHandler<String> {
 
-    protected void channelRead0(ChannelHandlerContext ctx, Long s) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, String s) throws Exception {
         System.out.println("服务端收到: "+s);
         ctx.writeAndFlush(987654321L);
 
