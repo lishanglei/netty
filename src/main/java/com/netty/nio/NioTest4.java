@@ -28,7 +28,8 @@ public class NioTest4 {
         ByteBuffer buffer =ByteBuffer.allocate(512);
         System.out.println("limit:"+buffer.limit());
         System.out.println("position:"+buffer.position());
-        while (true){
+        while
+        (true){
             buffer.clear();//这一行不能注释
             /**
              * 当limit==position时,read返回0

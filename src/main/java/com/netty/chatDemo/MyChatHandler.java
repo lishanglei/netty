@@ -7,6 +7,9 @@ import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.util.concurrent.GlobalEventExecutor;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * @author lishanglei
  * @version v1.0.0
@@ -24,12 +27,20 @@ public class MyChatHandler extends SimpleChannelInboundHandler<String> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String s) throws Exception {
 
-        Channel channel = ctx.channel();
-        channelGroup.forEach(ch ->{
-            if(channel!=ch){
-                ch.writeAndFlush(channel.remoteAddress()+"发送的消息:"+s+"\n");
-            }else{
-                channel.writeAndFlush("[自己]"+s+"\n");
+
+
+        ExecutorService executor = Executors.newCachedThreadPool();
+        executor.submit(new Runnable() {
+            @Override
+            public void run() {
+                Channel channel = ctx.channel();
+                channelGroup.forEach(ch ->{
+                    if(channel!=ch){
+                        ch.writeAndFlush(channel.remoteAddress()+"发送的消息:"+s+"\n");
+                    }else{
+                        channel.writeAndFlush("[自己]"+s+"\n");
+                    }
+                });
             }
         });
     }
